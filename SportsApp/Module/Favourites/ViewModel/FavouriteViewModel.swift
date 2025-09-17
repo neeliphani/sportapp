@@ -28,15 +28,16 @@ class FavouriteViewModel{
         self.localSource = localSource
     }
     
+    @discardableResult
     func getLeagues() -> [LeagueLocal]{
         leagues = localSource.getDataFromLocal()
         print("Refreshing fav table")
         return leagues ?? []
     }
-    
+
     func deleteLeague(name: String, key: Int){
         localSource.deleteFromLocal(name: name, key: key)
-        let _ = getLeagues()
+        getLeagues()
     }
     
     func getSelectedLeague(name: String, key: Int) -> LeagueLocal{

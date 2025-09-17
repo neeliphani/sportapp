@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class LeaguesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegateFlowLayout {
     
@@ -42,9 +41,8 @@ class LeaguesViewController: UIViewController, UITableViewDataSource, UITableVie
         
         cell.leagueName.text = leagues[indexPath.row].leagueName
         
-        let url = URL(string: leagues[indexPath.row].leagueLogo ?? "")
-        cell.leagueImage.kf.setImage(with: url,
-                                     placeholder: UIImage(named: "noImg"))
+        cell.leagueImage.setRemoteImage(from: leagues[indexPath.row].leagueLogo,
+                                        placeholder: UIImage(named: "noImg"))
         return cell
     }
     

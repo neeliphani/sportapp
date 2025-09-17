@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class TeamDetailsViewController: UIViewController {
     
@@ -23,9 +22,8 @@ class TeamDetailsViewController: UIViewController {
         
        
         teamName.text = team.teamName
-        let url = URL(string: team.teamLogo ?? "")
-        teamImage.kf.setImage(with: url,
-                              placeholder: UIImage(named: "noImg"))
+        teamImage.setRemoteImage(from: team.teamLogo,
+                                 placeholder: UIImage(named: "noImg"))
         teamSportName.text = sport.capitalized + " Team"
         
     }

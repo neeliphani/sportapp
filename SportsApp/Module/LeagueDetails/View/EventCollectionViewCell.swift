@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class EventCollectionViewCell: UICollectionViewCell {
     
@@ -29,12 +28,10 @@ class EventCollectionViewCell: UICollectionViewCell {
         self.dateLabel.text = date
         self.firstTeamName.text = firstName
         self.secondTeamName.text = secondName
-        let urlFirst = URL(string: firstLogo)
-        self.firstTeamLogo.kf.setImage(with: urlFirst,
-                                       placeholder: UIImage(named: "noImg"))
-        let url = URL(string: secondLogo)
-        self.secondTeamLogo.kf.setImage(with: url,
-                                        placeholder: UIImage(named: "noImg"))
+        self.firstTeamLogo.setRemoteImage(from: firstLogo,
+                                          placeholder: UIImage(named: "noImg"))
+        self.secondTeamLogo.setRemoteImage(from: secondLogo,
+                                           placeholder: UIImage(named: "noImg"))
         self.result.isHidden = true
     }
     
@@ -43,12 +40,10 @@ class EventCollectionViewCell: UICollectionViewCell {
         self.dateLabel.text = date
         self.firstTeamName.text = firstName
         self.secondTeamName.text = secondName
-        let urlFirst = URL(string: firstLogo)
-        self.firstTeamLogo.kf.setImage(with: urlFirst,
-                                       placeholder: UIImage(named: "noImg"))
-        let url = URL(string: secondLogo)
-        self.secondTeamLogo.kf.setImage(with: url,
-                                        placeholder: UIImage(named: "noImg"))
+        self.firstTeamLogo.setRemoteImage(from: firstLogo,
+                                          placeholder: UIImage(named: "noImg"))
+        self.secondTeamLogo.setRemoteImage(from: secondLogo,
+                                           placeholder: UIImage(named: "noImg"))
         self.result.text = result
         self.result.isHidden = false
         

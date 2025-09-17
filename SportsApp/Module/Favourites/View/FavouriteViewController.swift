@@ -41,7 +41,7 @@ class FavouriteViewController: UIViewController, UITableViewDataSource, UITableV
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        let _ = favouriteViewModel.getLeagues()
+        favouriteViewModel.getLeagues()
         
     }
     
@@ -54,9 +54,8 @@ class FavouriteViewController: UIViewController, UITableViewDataSource, UITableV
         
         cell.leagueName.text = leagues[indexPath.row].name
         
-        let url = URL(string: leagues[indexPath.row].logo)
-        cell.leagueImage.kf.setImage(with: url,
-                                     placeholder: UIImage(named: "noImg"))
+        cell.leagueImage.setRemoteImage(from: leagues[indexPath.row].logo,
+                                        placeholder: UIImage(named: "noImg"))
         
         return cell
     }
