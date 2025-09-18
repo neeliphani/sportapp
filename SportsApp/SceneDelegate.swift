@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  SportsApp
-//
-//  Created by Alaa on 17/05/2023.
-//
 
 import UIKit
 
