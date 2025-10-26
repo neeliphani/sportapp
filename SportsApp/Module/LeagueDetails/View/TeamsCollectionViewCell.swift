@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class TeamsCollectionViewCell: UICollectionViewCell {
     
@@ -19,8 +18,7 @@ class TeamsCollectionViewCell: UICollectionViewCell {
 //        self.teamLogo.contentMode = .scaleAspectFill
 //        self.teamLogo.layer.cornerRadius =   self.teamLogo.frame.size.width / 2
 //        self.teamLogo.layer.masksToBounds = true
-        let url = URL(string: teamLogo)
-        self.teamLogo.kf.setImage(with: url,
-                                  placeholder: UIImage(named: "noImg"))
+        self.teamLogo.setRemoteImage(from: teamLogo,
+                                     placeholder: UIImage(named: "noImg"))
     }
 }
