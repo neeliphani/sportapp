@@ -14,7 +14,7 @@ class Network: NetworkProtocol{
             
             switch response.result {
             case .success(let data):
-                print("done")
+                print("don")
                 handler(data)
             case .failure(let error):
                 print("Error: \(error)")
