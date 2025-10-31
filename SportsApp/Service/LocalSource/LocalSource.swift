@@ -29,7 +29,7 @@ class LocalSource: LocalSourceProtocol{
             try managedContext.save()
             print("\nInserting a league done...\n")
         }catch let error as NSError{
-            print("\nerror in adding to favourite: \(error)\n")
+            print("\nerror in adding to favouri: \(error)\n")
         }
     }
     
